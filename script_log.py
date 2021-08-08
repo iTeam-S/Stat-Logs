@@ -3,7 +3,7 @@
 import mysql.connector
 from datetime import datetime
 import os
-
+import sys
 #connecter à la base
 conn = mysql.connector.connect(user=os.environ.get("ITEAMS_USER"), password=os.environ.get("ITEAMS_PASS"),
                               host=os.environ.get("ITEAMS_HOST"),database=os.environ.get("ITEAMS_DB"))
@@ -11,7 +11,7 @@ cursor = conn.cursor()
 
 
 #chercher tous les fichiers utilisées et les bouclé pour la lecture auto:
-path=" "
+path = sys.argv[1]
 for fichiers in os.listdir(path):
 
 
