@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='style.css') }}">
+</head>
+<body>
+    <div class="titre">
+        <img class="logo" src="https://iteam-s.mg/web/image/website/1/logo/iTeam-%24?unique=ea42255">
+        <h1>STATISTIC OF WEBSITE-LOGS ITEAM-$</h1>
+    </div>
+    <div class="input">
+        <form action="http://127.0.0.1:5000/statistiques" method="post">
+           <div class="label_date">
+            <label for="date">Entrer la date :</label> <br>
+            <input class="date" type="date" name="daty" value="{{ date }}" autofocus />
+           </div> 
+
+            <div class="label_statut">
+            <label for="satut">Entrer le Statut HTTP:</label> <br>
+            <input class="statut" type="text" name="statut" value="{{ statut }}"autofocus/> 
+            <input type = "hidden" name = "user_log" value = "{{ user_log }}" />
+            </div> 
+            
+            <button class="buttom-trouver" type="submit">TROUVER</button>
+        </form>
+    </div>
+    <div class="visiteur" >
+        <p><h3>VOICI LES STATISTIQUES DES VISITEURS DU {{ daty_vis }}</h3></p>
+        <div class="visiteur_max">
+            <h4>NOMBRE MAXIMAL DE VISITEUR</h4>
+            <div class="elements">
+                <p><u>Nombre:</u>  {{ n_max }} </p> 
+                <p><u>Heure:</u> entre {{ h_max }} heures et {{ h_max + 1}} heures </p>
+            </div>
+        </div>
+        <div class="visiteur_min">
+            
+            <h4>NOMBRE MINIMAL DE VISITEUR</h4>
+            <div class="elements">
+                <p><u>Nombre:</u>  {{ n_min}}</p>
+                <p><u>Heure:</u> entre {{ h_min }} heures et {{ h_min+ 1}} heures </p>
+            </div>
+        </div>
+    </div>
+    <div class="schema-stat-logs">
+        <main>
+            <canvas id="myChart"></canvas>
+        </main>
+        <script src="{{ url_for( 'static', filename='chart.min.js' ) }}"></script>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels:[...Array(24).keys()],
+                    datasets: [{
+                            label: "STATISTIQUES DE STATUT {{ statut }} DU SITE ITEAM-S DU {{ date }}",
+                            data: {{ liste }},
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+            });
+        </script>
+    </div>
+</body>
+</html>
