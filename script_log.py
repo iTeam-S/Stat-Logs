@@ -7,8 +7,8 @@ import sys
 
 
 #connecter à la base
-conn = mysql.connector.connect(user=os.environ.get("ITEAMS_USER"), password=os.environ.get("ITEAMS_PASS"),
-                              host=os.environ.get("ITEAMS_HOST"),database=os.environ.get("ITEAMS_DB"))
+conn = mysql.connector.connect(user=os.environ.get("ITEAMS_DB_USER"), password=os.environ.get("ITEAMS_DB_PASSWORD"),
+                              host='localhost',database='ITEAMS')
 cursor = conn.cursor()
 
 
@@ -53,10 +53,12 @@ for ligne in file:
 	print(liste_vrai)
 
 	#insertion dans la base
-	
-	cursor.execute(""" INSERT INTO Access_log_server (ip_adress,date_heure,methode,routes,protocole,code_retour,user_agent)
+	try:
+		cursor.execute(""" INSERT INTO Access_log_server (ip_adress,date_heure,methode,routes,protocole,code_retour,user_agent)
 		VALUES (%s,%s,%s,%s,%s,%s,%s)""",(liste_vrai[0],daty_vrai,liste_vrai[2],liste_vrai[3],liste_vrai[4],valeur_vrai,UserAgent))
-	
+	except Exception as err:
+		print(err)
+		continue
 	conn.commit()
 
 file.close()
