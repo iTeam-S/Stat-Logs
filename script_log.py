@@ -7,8 +7,8 @@ import sys
 
 
 #connecter à la base
-conn = mysql.connector.connect(user=os.environ.get("ITEAMS_USER"), password=os.environ.get("ITEAMS_PASS"),
-                              host=os.environ.get("ITEAMS_HOST"),database=os.environ.get("ITEAMS_DB"))
+conn = mysql.connector.connect(user=os.environ.get("ITEAMS_DB_USER"), password=os.environ.get("ITEAMS_DB_PASSWORD"),
+                              host='localhost',database=ITEAMS)
 cursor = conn.cursor()
 
 
