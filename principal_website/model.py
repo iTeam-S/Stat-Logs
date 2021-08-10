@@ -70,7 +70,7 @@ class Model():
 
     # Method for the management of the user:
     def login(self, user_log, pass_log):
-        self.cursor.execute(""" SELECT 1  FROM user
+        self.cursor.execute(""" SELECT 1  FROM user_log_server
                     WHERE email = %s and mot_de_passe = %s """, (user_log, pass_log))
 
         result_user = self.cursor.fetchall()
