@@ -1,5 +1,5 @@
-/*CSS pour le page_html*/
-body {
+/*CSS for the stat_wbs_page_html*/
+.body {
     background-color: #116466;
 }
 .titre {
@@ -7,8 +7,6 @@ body {
     height: 70px;
     text-align: center;
     text-decoration: underline;
-    border: 1px solid #116466;
-    color: #fff;
 }
 .logo {
     width: 5%;
@@ -66,4 +64,16 @@ button {
     cursor: pointer;
     display: inline-block;
     margin-left: 2%;
+}
+
+/* CSS for the default_stat_page_html */
+.default_stat{
+    border: 1px solid;
+    width: 50%;
+    margin-top: 5%;
+    border-radius: 5px;
+}
+
+.info{
+    width: 50%;
 }

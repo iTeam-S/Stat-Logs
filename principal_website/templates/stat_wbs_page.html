@@ -3,12 +3,9 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ url_for( 'static', filename='style.css') }}">
+    <link rel="icon" href="https://iteam-s.mg/web/image/website/1/logo/iTeam-%24?unique=ea42255" />
 </head>
-<body>
-    <div class="titre">
-        <img class="logo" src="https://iteam-s.mg/web/image/website/1/logo/iTeam-%24?unique=ea42255">
-        <h1>STATISTIC OF WEBSITE-LOGS ITEAM-$</h1>
-    </div>
+<body class="body" >
     <div class="input">
         <form action="http://127.0.0.1:5000/statistiques" method="post">
            <div class="label_date">
@@ -44,6 +41,7 @@
         </div>
     </div>
     <div class="schema-stat-logs">
+       
         <main>
             <canvas id="myChart"></canvas>
         </main>
@@ -55,7 +53,7 @@
                 data: {
                     labels:[...Array(24).keys()],
                     datasets: [{
-                            label: "STATISTIQUES DE STATUT {{ statut }} DU SITE ITEAM-S DU {{ date }}",
+                            label: "STATISTIQUES DE STATUT {{ statut }}  DU SITE ITEAM-S DU {{ date }}",
                             data: {{ liste }},
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
@@ -74,7 +72,8 @@
                             'rgba(255, 159, 64, 1)'
                         ],
                         borderWidth: 1
-                    }]
+                    }],
+
             },
             options: {
                 responsive: true,
