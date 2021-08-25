@@ -120,5 +120,5 @@ def main():
 def static_dir(path):
     return send_from_directory("static", path)
 
-
-app.run()
+if __name__ == "__main__":
+	app.run()
