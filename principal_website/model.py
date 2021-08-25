@@ -1,5 +1,5 @@
 import mysql.connector
-
+import os
 
 class Model():
     def __init__(self):
