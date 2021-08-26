@@ -35,9 +35,9 @@ def default_statistique(user_log=None):
     if user_log or request.form.get('user_log'):
         
         date = datetime.now().strftime("%Y-%m-%d")
-    
+        statut = ''
         # fetch the data for default statistique of the date now in BDD:
-        resultat_stat1 = Database.default_statistique(date)
+        resultat_stat1 = Database.statistique(date,statut)
         dico1 = {}
         dico_sort1 = {}
         for row1 in resultat_stat1:
@@ -120,5 +120,5 @@ def main():
 def static_dir(path):
     return send_from_directory("static", path)
 
-if __name__ == "__main__":
-	app.run()
+
+app.run()
