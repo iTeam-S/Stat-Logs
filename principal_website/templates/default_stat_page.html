@@ -10,18 +10,11 @@
 
 </head>
 <body>
-
-    <div class="titre">
-      <img class="logo" src="https://iteam-s.mg/web/image/website/1/logo/iTeam-%24?unique=ea42255">
-      <h1>STATISTIC OF WEBSITE-LOGS ITEAM-$</h1>
-    </div>
-
-    <center>
-      <div class="info">
-        <p>Voici le statistique de notre site aujourd'hui,
-          Si vous voulez des detailles sur ce statistique <a href="/statistiques">cliquez ici</a>
-        </p>
-      </div>
+  <div class="titre">
+    <img class="logo" src="https://iteam-s.mg/web/image/website/1/logo/iTeam-%24?unique=ea42255">
+  </div>
+  <h1>STATISTIC OF WEBSITE-LOGS ITEAM-$</h1>
+  <div class="wrapper">
       <div class='default_stat'>
         <script
               src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
@@ -38,7 +31,7 @@
               labels: xValues,
               datasets: [{ 
                 data: {{ liste1 }},
-                borderColor: "red",
+                borderColor: "teal",
                 fill: false
               }]
             },
@@ -49,5 +42,11 @@
           </script>
         </div> 
     </center>   
+    
+  </div>
+  <p>Voici le statistique de notre site aujourd'hui,
+    Si vous voulez des detailles sur ce statistique <a href="/statistiques">cliquez ici</a>
+  </p>
+    
 </body>
 </html>

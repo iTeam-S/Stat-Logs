@@ -1,79 +1,39 @@
-/*CSS for the stat_wbs_page_html*/
-.body {
-    background-color: #116466;
-}
-.titre {
-    width: 100%;
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #152B39;
+    font-family: Courier, monospace;
+    font-size: 14px;
+    color:#ccc; 
+  }
+  
+  .wrapper {
+    display: block;
+    margin: 5em auto;
+    border: 1px solid #555;
+    width: 700px;
+    height: 350px;
+    position: relative;
+  }
+  p{text-align:center;}
+  .label {
+    height: 1em;
+    padding: .3em;
+    background: rgba(255, 255, 255, .8);
+    position: absolute;
+    display: none;
+    color:#333;
+    
+  }
+  h1{
+      text-align: center;
+  }
+  a{
+      color: teal;
+  }
+  img{
+    width: 70px;
     height: 70px;
-    text-align: center;
-    text-decoration: underline;
-}
-.logo {
-    width: 5%;
-    height: 70px;
-    border-radius: 50% solid #116466;
-    float: left;
-}
-.schema-stat-logs {
-    border: 2px solid #116466;
-    width:50%;
-    height: 345px;
-    border-radius: 8px;
-    margin-top: 2%; 
-    float: left;
-    margin-left: 6%;
-    background-color: #fff;
-}
-.input {
-    width:55%;
-    margin-left: 10%;
-    margin-top:3% ;
-}
-.buttom-trouver {
-    border: 2px solid #116466;
-    border-radius: 10%;
-    width: 15%;
-}
-.date , .statut {
-    border: 2px solid;
-}
-.visiteur {
-    width: 27%;
-    border: 2px solid #116466;
-    height: 300px;
-    float: right;
-    margin-right:7%;
-    margin-top: 3%;
-    border-radius: 5%;
-    padding-left: 4%;
-    background-color: #fff;
-}
-.elements {
-    margin-left: 12%;
-}
-
-h3 , h4{
-    text-decoration: underline;
-}
-
-.label_date, .label_statut  {
-    display: inline-block;
-    margin-left: 2%;
-}
-button {
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 2%;
-}
-
-/* CSS for the default_stat_page_html */
-.default_stat{
-    border: 1px solid;
-    width: 50%;
-    margin-top: 5%;
-    border-radius: 5px;
-}
-
-.info{
-    width: 50%;
-}
+    margin-left: 5%;
+    margin-top: 2%;
+  }
