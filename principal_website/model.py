@@ -3,7 +3,7 @@ import os
 
 class Model():
     def __init__(self):
-<<<<<<< HEAD
+
         self.conn = mysql.connector.connect(user="iteams",
         password="__iteam-s__",
         host='iteam-s.mg',database='ITEAMS')
@@ -11,7 +11,7 @@ class Model():
         self.cursor = self.conn.cursor()
 
     # Method fot the statistic generaly:
-=======
+
         pass 
     
     #Method for the connexion to BDD:
@@ -23,7 +23,6 @@ class Model():
    
                       
     # Method for the statistic generaly:
->>>>>>> 12426fee21527d077a8a042fca040fe350a2964b
     def statistique(self, date, statut):
         if(statut != ''):
             self.cursor.execute("""

@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, render_template, url_for
+from flask import Flask, jsonify, request, render_template, url_for, send_from_directory
 import mysql.connector
 from model import Model
 from datetime import datetime
