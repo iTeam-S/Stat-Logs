@@ -1,15 +1,23 @@
 import mysql.connector
-import os
+from os import environ as env
+from dotenv import load_dotenv
+
+
+#charger le fichier .env
+load_dotenv()
 
 class Model():
     def __init__(self):
-        pass 
+        self.connexion_db()
     
     #Method for the connexion to BDD:
     def connexion_db(self):
-            self.conn = mysql.connector.connect(user=os.environ.get("ITEAMS_DB_USER"),
-                    password=os.environ.get("ITEAMS_DB_PASSWORD"),
-                    host='localhost',database='ITEAMS')
+            self.conn = mysql.connector.connect(
+                user=env.get("ITEAMS_DB_USER"),
+                password=env.get("ITEAMS_DB_PASS"),
+                host=env.get("ITEAMS_DB_HOST"),
+                database=env.get("ITEAMS_DB_NAME")
+            )
             return self.conn  
    
                       

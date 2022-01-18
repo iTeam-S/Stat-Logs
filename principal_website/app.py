@@ -1,10 +1,9 @@
-from flask import Flask, jsonify, request, render_template, url_for
-import mysql.connector
-from model import Model
+from flask import Flask, jsonify, request, render_template, url_for,send_from_directory
+import model
 from datetime import datetime
-import calendar
 
-Database = Model()
+
+Database = model.Model()
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
@@ -121,4 +120,5 @@ def static_dir(path):
     return send_from_directory("static", path)
 
 
-app.run()
+if __name__ == "__main__":
+    app.run()
