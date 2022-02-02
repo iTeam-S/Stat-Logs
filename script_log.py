@@ -54,7 +54,7 @@ for ligne in file:
 
 	#insertion dans la base
 	try:
-		cursor.execute(""" INSERT INTO Access_log_server (ip_adress,date_heure,methode,routes,protocole,code_retour,user_agent)
+		cursor.execute(""" INSERT INTO log_webserver (ip_adress,date_heure,methode,routes,protocole,code_retour,user_agent)
 		VALUES (%s,%s,%s,%s,%s,%s,%s)""",(liste_vrai[0],daty_vrai,liste_vrai[2],liste_vrai[3],liste_vrai[4],valeur_vrai,UserAgent))
 	except Exception as err:
 		print(err)
